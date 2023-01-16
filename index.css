@@ -1,0 +1,125 @@
+body{
+    margin: 0px;
+    background-color: black;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.card-groups,
+.card-group,
+.card {
+    aspect-ratio: 5 / 7;
+}
+.card-groups,
+.card-group,
+.big-card{
+    width: 30vmin;
+}
+.card-group{
+    position: absolute;
+    transition: transform 400ms ease;
+}
+.card-group[data-status="unknown"] {
+    transform: scale(0);
+}
+.card-group[data-status="after"] {
+    transform: translateX(50%) scale(0);
+}
+.card-group[data-status="becoming-active-from-before"] {
+    transform: translateX(-50%) scale(0);
+    transition: none;
+}
+.card{
+    aspect-ratio: 5 / 7;
+    background-color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+}
+.big-card{
+    width: 30vmin;
+    border-radius: 1vmin;
+}
+.little-card{
+    width: 12vmin;
+    border-radius: 2vmin;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.big-card:nth-child(2) {
+    background-image: url("https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"); 
+    background-size: cover;
+    transform: translateX(-10) rotate(-1deg);
+}
+.big-card:nth-child(4) {
+    background-image: url("https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"); 
+    background-size: cover;
+    transform: rotate(2deg);
+}
+.big-card:nth-child(6) {
+    background-image: url("https://images.unsplash.com/photo-1577023311546-cdc07a8454d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    background-size: cover;
+    transform: translateX(-6%) rotate(-3deg);
+}
+.big-card:nth-child(8) {
+    background-image: url("https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    background-size: cover;
+    transform: translate(10% , 3%) rotate(5deg);
+}
+.card-group:hover > .big-card:nth-child(2) {
+    transform: translate(-75%, 16%) rotate(-24deg)
+}
+.card-group:hover > .big-card:nth-child(4) {
+    transform: translate(-25%, 8%) rotate(-8deg);
+}
+.card-group:hover > .big-card:nth-child(6) {
+    transform: translate(25%, 8%) rotate(8deg);
+}
+.card-group:hover > .big-card:nth-child(8) {
+    transform: translate(75%, 16%) rotate(24deg);
+}
+.card-group:hover > .little-card:nth-child(1) {
+    background-image: url("https://media.istockphoto.com/id/1358047790/pt/foto/kitten-in-the-boot.jpg?s=612x612&w=is&k=20&c=oy6b_e0wXZ2WO2KgFYRXVYVnE8SgrmwBRpQruB2K58U=");
+    background-size: cover;
+    transform: translate(200%, -160%) rotate(-15deg);
+}
+.card-group:hover > .little-card:nth-child(3) {
+    background-image: url("https://media.istockphoto.com/id/1047466150/pt/foto/ginger-tabby-cat-kitten.jpg?s=612x612&w=is&k=20&c=_fjJnzPPpPLawsSm46M6vFT49eBV3GLaMnh1OqFHa0E=");
+    background-size: cover;
+    transform: translate(160%, 170%) rotate(15deg);
+}
+.card-group:hover > .little-card:nth-child(5) {
+    background-image: url("https://media.istockphoto.com/id/1186954832/pt/foto/little-black-kitten-playing-and-enjoys-with-orange-ball-at-living-room-of-house.jpg?s=612x612&w=0&k=20&c=F-9NqmBbnFEjQcpo_6PQXMWuoOnFY3_WlLD7tQyovcw=");
+    background-size: cover;
+    transform: translate(-200%, -170%) rotate(15deg);
+}
+.card-group:hover > .little-card:nth-child(7) {
+    background-image: url("https://media.istockphoto.com/id/1156277216/pt/foto/little-kitten-with-black-and-white-fur-and-green-eyes-with-exotic-fruits-pineapple-banana.jpg?s=612x612&w=0&k=20&c=-BIG1cRGcTLG8kvrNWF1yd_C7xaLAVy8gVnGhXB0Afw=");
+    background-size: cover;
+    transform: translate(-280%, 140%) rotate(-15deg);
+}
+.card-swiper-buttons {
+    margin-top: 10vmin;
+    display: flex;
+    justify-content: space-around;
+    padding: 0vmin 4vmin;
+}
+.card-swiper-buttons > button {
+    font-size: 2.5vmin;
+    border: 0.4vmin solid rgb(200, 200, 200,);
+    border-radius: 100%;
+    color: white;
+    background-color: transparent;
+    height: 7vmin;
+    width: 7vmin;
+    cursor: pointer;
+}
+#love-button {
+    color: rgb(33, 150, 245);
+    border-color: rgb(33, 150, 245);
+}
+#hate-button {
+    color: rgb(107, 105, 105);
+    border-color: rgb(107, 105, 105);
+}
+
